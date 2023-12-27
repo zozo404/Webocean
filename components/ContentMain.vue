@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <h1 class="text-4xl font-blackmb-6 font-sans">Welcome</h1>
-    <p class="container mx-auto pb-4 text-lg font-bold">
+  <div class="text-center">
+    <div class="text-2xl font-blackmb-6 font-sans flex justify-center">
+      <p>Welcome </p>
+      <NuxtImg src="/bubbles.png" class="w-8"/>
+    </div>
+    <p class="container mx-auto py-4 text-base">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro soluta
       similique id dolores neque assumenda quidem mollitia voluptatem est.
       Voluptatum maiores, assumenda rerum fugiat sequi recusandae animi et
       consequuntur quidem !
     </p>
-    <h1 class="text-xl font-extrabold font-sans my-2">
-      See at our new products
-    </h1>
-    <Titles title="Latest News" />
+    <Titles title="Latest News" class="pb-4" />
     <News :news="LastNews" />
   </div>
 </template>

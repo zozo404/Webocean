@@ -4,6 +4,9 @@ module.exports = {
     extend: {
       colors: {
         darkblue: "#000B76"
+      },
+      blur: {
+        1: "1px"
       }
     },
     screens: {

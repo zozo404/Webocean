@@ -65,7 +65,7 @@
           <p
             class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl font-extrabold font-sans"
           >
-            {{ kits.title }} | {{ kits.price }} €
+            {{ kits.title }} - {{ kits.price }} €
           </p>
           <!-- description of news -->
         </div>
@@ -73,6 +73,9 @@
           <p class="first-letter:uppercase">
             {{ kits.description }}
           </p>
+        </div>
+         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
+          <BtnBuy :kits="kits" />
         </div>
       </div>
     </div>
