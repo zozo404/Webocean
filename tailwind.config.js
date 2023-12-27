@@ -2,7 +2,9 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {}
+      colors: {
+        darkblue: "#000B76"
+      }
     },
     screens: {
       iphoneSE: "375px",

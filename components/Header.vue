@@ -20,7 +20,7 @@
       <NuxtLink v-else to="/" class="flex justify-center lg:col-span-1 h-full">
         <span class="sr-only">Logo</span>
         <!-- mettre img -->
-        <img src="/Logo.png" alt="logo" class="h-full" sizes="xs:100vw" />
+        <NuxtImg src="/Logo.png" alt="logo" class="h-full" sizes="xs:100vw" />
       </NuxtLink>
       <div class="text-right pr-8 lg:hidden flex justify-end" @click="toggle">
         <i class="fa-solid fa-bars cursor-pointer" style="color: #ffffff" />
@@ -69,7 +69,7 @@
         <NuxtLink v-else to="/" class="flex justify-center lg:col-span-1 h-full">
           <span class="sr-only">Logo</span>
           <!-- mettre img -->
-          <img src="/Logo.png" alt="logo" class="h-full" sizes="xs:100vw" />
+          <NuxtImg src="/Logo.png" alt="logo" class="h-full" sizes="xs:100vw" />
         </NuxtLink>
         <!-- hamburger icon -->
         <div

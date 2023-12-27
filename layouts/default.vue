@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="bg-darkblue text-white">
     <Header />
+    <Video />
     <Nuxt />
   </div>
 </template>

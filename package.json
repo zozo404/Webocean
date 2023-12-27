@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "ngrok" : "ngrok http 3000"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
