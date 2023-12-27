@@ -8,13 +8,19 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Website Webocean' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  script: [
+    {
+      src: "https://kit.fontawesome.com/5d5fd51001.js",
+      crossorigin: "anonymous"
+    },
+  ],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -22,6 +28,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // font-awesome
+    "@plugins/font-awesome"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -31,13 +39,27 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // nuxt-image
+    "@nuxt/image"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://go.nuxtjs.dev/axios
+    "@nuxtjs/axios",
+    '@nuxt/image',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  sanity: {
+    projectId: "4qizwmnw",
+    minimal: true
+  },
+  image: {
+    sanity: {
+      projectId: "4qizwmnw"
+    }
+  },
 }
