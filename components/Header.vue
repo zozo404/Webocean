@@ -1,8 +1,8 @@
 <template>
-  <header class="bg-zinc-900 w-full z-20 sticky top-0 text-white">
+  <header class=" w-full z-20 sticky top-0 text-white bg-darkblue">
     <!-- nav desktop -->
     <nav
-      class="lg:max-h-28 max-h-20 w-full py-4 lg:py-6 grid grid-cols-2 grid-rows-1 lg:grid-cols-2 items-center justify-between lg:border-none bg-zinc-900"
+      class="lg:max-h-28 max-h-20 w-full py-4 lg:py-6 grid grid-cols-2 grid-rows-1 lg:grid-cols-2 items-center justify-between lg:border-none "
       aria-label="Top"
     >
       <!-- logo -->
@@ -49,10 +49,10 @@
     <!-- nav responsive ouverte -->
     <nav
       :class="{ hidden: isActive }"
-      class="lg:hidden w-full absolute top-0 h-screen z-40 grid grid-cols-2 grid-rows-4 bg-zinc-900 bg-opacity-75 backdrop-blur-sm"
+      class="lg:hidden w-full absolute top-0 h-screen z-40 grid grid-cols-2 grid-rows-4 bg-opacity-40 backdrop-blur-sm bg-black"
     >
       <div
-        class="grid grid-cols-2 grid-rows-1 col-span-2 my-4 h-12 justify-items-center w-full"
+        class="grid grid-cols-2 grid-rows-1 col-span-2 my-4 h-12 justify-items-center w-full "
       >
         <!-- logo -->
         <NuxtLink v-if="Logo" to="/" class="flex justify-center lg:col-span-1 h-full">
@@ -86,7 +86,7 @@
       <div
         v-for="lien in liens"
         :key="lien.texte"
-        class="mb-4 py-4 flex flex-col items-center"
+        class="mb-4 py-4 flex flex-col items-center "
         @click="toggle"
       >
         <NuxtLink

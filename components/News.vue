@@ -1,9 +1,10 @@
 <template>
   <div>
     <!-- div 1 -->
-    <div v-if="news">
+    <div v-if="news" class="flex flex-col gap-4">
       <!-- div by news  -->
       <div v-for="news in news" :key="news.id">
+        <NuxtLink :to="news.slug.current" class="flex justify-center">
         <!-- image new -->
         <div class="text-center">
           <NuxtImg :src="news.imageId.asset._ref" provider="sanity" />
@@ -15,6 +16,7 @@
         <div class="hidden md:block">
           <p>{{ truncateDescription(news.description) }}</p>
         </div>
+        </NuxtLink>
       </div>
     </div>
   </div>

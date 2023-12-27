@@ -2,7 +2,7 @@
   <div class="bg-darkblue text-white">
     <Header />
     <Video />
-    <Nuxt />
+    <Nuxt class="px-8" />
   </div>
 </template>
 <script>
