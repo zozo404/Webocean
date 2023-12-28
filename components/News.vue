@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- div 1 -->
-    <div v-if="news" class="flex flex-col gap-4 px-4">
+    <div v-if="news" class="flex flex-col gap-8 px-4 pb-4">
       <!-- div by news  -->
       <div v-for="news in news" :key="news.id">
         <NuxtLink :to="news.slug.current" class="flex justify-center">

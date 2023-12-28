@@ -17,11 +17,5 @@
 <script>
 export default {
   name: "VideoPage",
-  props: {
-    bgvideo: {
-      default: null,
-      type: Array,
-    },
-  },
 };
 </script>

@@ -48,7 +48,7 @@
                 {{ kit.title }}
               </h1>
               <!-- description of kit -->
-              <p class="">
+              <p class="font-bold">
                 {{ truncateDescription(kit.description) }}
               </p>
               <!-- btn buy -->

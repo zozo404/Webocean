@@ -23,7 +23,7 @@ export default {
 };
 </script>
 <style>
-html{
-  font-family: 'Lexend';
+html {
+  font-family: "Lexend";
 }
 </style>
