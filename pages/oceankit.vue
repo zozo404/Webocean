@@ -1,6 +1,6 @@
 <template>
   <div class="text-center container mx-auto my-4">
-    <h2 class="text-4xl font-extrabold text-gray-800 mb-12 font-sans">
+    <h2 class="text-2xl font-light mb-12 font-sans">
       Discover our kits
     </h2>
     <Kits :kits="Kits" />
