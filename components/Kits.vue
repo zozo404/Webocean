@@ -11,10 +11,10 @@
           <div
             v-for="kit in kits"
             :key="kit.id"
-            class="group group overflow-hidden relative text-gray-50 h-72 w-72 rounded-2xl"
+            class="group group overflow-hidden relative text-black h-72 w-72 rounded-2xl"
           >
             <div
-              class="w-72 h-full bg-cover bg-center text-gray-800"
+              class="w-72 h-full bg-cover bg-center"
             >
               <NuxtImg
                 :src="kit.imageId.asset._ref"
@@ -25,10 +25,10 @@
               />
             </div>
             <div
-              class="absolute bg-gray-50 -bottom-24 w-72 h-36 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-700 duration-700 group-hover:h-60 justify-between"
+              class="absolute bg-[#68C3D4] -bottom-24 w-72 h-36 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-700 duration-700 group-hover:h-60 justify-between text-center"
             >
               <div
-                class="text-black font-bold text-lg flex flex-row flex-wrap justify-evenly"
+                class="font-bold text-lg flex flex-row flex-wrap justify-evenly"
               >
                 <p class="first-letter:uppercase">
                   {{ kit.title }} {{ kit.price }}€
@@ -36,25 +36,25 @@
                 <!-- if the kit is new -->
                 <p
                   v-if="kit.new == true"
-                  class="bg-amber-1000 px-1 rounded-full text-orange-200"
+                  class="bg-darkblue px-2 rounded-full text-white"
                 >
                   <span class="animate-pulse">New</span>
                 </p>
               </div>
               <!-- description of kit -->
               <h1
-                class="text-gray-800 font-bold text-3xl first-letter:uppercase pt-3"
+                class="font-bold text-3xl first-letter:uppercase pt-3 text-black"
               >
                 {{ kit.title }}
               </h1>
               <!-- description of kit -->
-              <p class="text-neutral-800">
+              <p class="">
                 {{ truncateDescription(kit.description) }}
               </p>
               <!-- btn buy -->
               <NuxtLink :to="kit.slug.current" class="flex justify-center">
                 <button
-                  class="smky-btn3 relative hover:text-[#FBD1A2] py-2 px-6 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-10 after:z-[-10] after:bg-[#403233] after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-black w-1/2 self-center"
+                  class="smky-btn3 relative py-2 px-6 hover:text-white after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-10 after:z-[-10] after:bg-darkblue after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-black w-1/2 self-center"
                 >
                   More
                 </button>

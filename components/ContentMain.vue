@@ -1,8 +1,12 @@
 <template>
   <div class="text-center">
     <div class="text-xl font-blackmb-6 font-sans flex justify-center">
-      <p>Welcome </p>
-      <NuxtImg :src="Bubbles.imageId.asset._ref" class="w-8" provider="sanity"/>
+      <p>Welcome</p>
+      <NuxtImg
+        :src="Bubbles.imageId.asset._ref"
+        class="w-8"
+        provider="sanity"
+      />
     </div>
     <p class="container mx-auto py-4 text-base">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro soluta
@@ -10,8 +14,6 @@
       Voluptatum maiores, assumenda rerum fugiat sequi recusandae animi et
       consequuntur quidem !
     </p>
-    <Titles title="Latest News" class="pb-4" />
-    <News :news="LastNews" />
   </div>
 </template>
 
@@ -21,19 +23,10 @@ import { mapGetters } from "vuex";
 export default {
   name: "ContentMain",
   computed: {
-    ...mapGetters(["getNews", "getImageSite"]),
-    LastNews() {
-      const LastNews = this.getNews.filter((news) => news.new === true);
-      // Triez les actualités par date de manière décroissante
-      const sliceNews = LastNews.sort(
-        (a, b) => new Date(b.date) - new Date(a.date)
-      );
-
-      return sliceNews.slice(0, 2);
-    },
-     Bubbles() {
+    ...mapGetters(["getImageSite"]),
+    Bubbles() {
       return this.getImageSite.find((el) => el.name === "bubbles");
-    },
+    }
   },
 };
 </script>
