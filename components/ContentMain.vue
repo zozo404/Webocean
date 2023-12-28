@@ -1,8 +1,8 @@
 <template>
   <div class="text-center">
-    <div class="text-2xl font-blackmb-6 font-sans flex justify-center">
+    <div class="text-xl font-blackmb-6 font-sans flex justify-center">
       <p>Welcome </p>
-      <NuxtImg src="/bubbles.png" class="w-8"/>
+      <NuxtImg :src="Bubbles.imageId.asset._ref" class="w-8" provider="sanity"/>
     </div>
     <p class="container mx-auto py-4 text-base">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro soluta
@@ -21,7 +21,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "ContentMain",
   computed: {
-    ...mapGetters(["getNews"]),
+    ...mapGetters(["getNews", "getImageSite"]),
     LastNews() {
       const LastNews = this.getNews.filter((news) => news.new === true);
       // Triez les actualités par date de manière décroissante
@@ -30,6 +30,9 @@ export default {
       );
 
       return sliceNews.slice(0, 2);
+    },
+     Bubbles() {
+      return this.getImageSite.find((el) => el.name === "bubbles");
     },
   },
 };

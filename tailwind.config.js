@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkblue: "#000B76"
+        darkblue: "#000B76",
+        bluefooter: "#000025"
       },
       blur: {
         1: "1px"
