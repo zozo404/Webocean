@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div>
+  <div class="flex items-center justify-center h-screen">
     <h1 v-if="error.statusCode === 404">
       <div class="text-center container mx-auto my-14 flex items-center justify-center md:my-24 lg:my">
         <div class="text-center">
