@@ -6,7 +6,7 @@
       aria-label="Top"
     >
       <!-- logo -->
-      <NuxtLink v-if="Logo" to="/" class="flex justify-center lg:col-span-1 h-full">
+      <NuxtLink to="/" class="flex justify-center lg:col-span-1 h-full">
         <span class="sr-only">Logo</span>
         <NuxtImg
           :src="Logo.imageId.asset._ref"
@@ -15,12 +15,6 @@
           class="h-full"
           sizes="xs:100vw"
         />
-      </NuxtLink>
-      <!--Logo else for 404 page-->
-      <NuxtLink v-else to="/" class="flex justify-center lg:col-span-1 h-full">
-        <span class="sr-only">Logo</span>
-        <!-- mettre img -->
-        <NuxtImg src="/Logo.png" alt="logo" class="h-full" sizes="xs:100vw" />
       </NuxtLink>
       <div class="text-right pr-8 lg:hidden flex justify-end" @click="toggle">
         <i class="fa-solid fa-bars cursor-pointer" style="color: #ffffff" />
@@ -55,7 +49,7 @@
         class="grid grid-cols-2 grid-rows-1 col-span-2 my-4 h-12 justify-items-center w-full "
       >
         <!-- logo -->
-        <NuxtLink v-if="Logo" to="/" class="flex justify-center lg:col-span-1 h-full">
+        <NuxtLink to="/" class="flex justify-center lg:col-span-1 h-full">
           <span class="sr-only">Logo</span>
           <NuxtImg
             :src="Logo.imageId.asset._ref"
@@ -64,12 +58,6 @@
             class="h-full"
             sizes="xs:100vw"
           />
-        </NuxtLink>
-        <!-- else for 404 page -->
-        <NuxtLink v-else to="/" class="flex justify-center lg:col-span-1 h-full">
-          <span class="sr-only">Logo</span>
-          <!-- mettre img -->
-          <NuxtImg src="/Logo.png" alt="logo" class="h-full" sizes="xs:100vw" />
         </NuxtLink>
         <!-- hamburger icon -->
         <div

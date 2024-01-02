@@ -82,10 +82,6 @@
       </div>
     </div>
   </div>
-  <!-- div error -->
-  <div v-else>
-    <Error404 />
-  </div>
 </template>
 
 <script>
@@ -112,7 +108,7 @@ export default {
   // Ajoutez cette méthode pour la redirection vers la page 404
   beforeMount() {
     if (!this.news && !this.kits) {
-      this.$router.push("../layouts/error"); // Assurez-vous que le chemin est correct
+      this.$router.push("../layouts/error");
     }
   },
   methods: {

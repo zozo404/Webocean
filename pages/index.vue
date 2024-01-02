@@ -4,7 +4,7 @@
     <Titles title="Latest News" class="pb-4" />
     <News :news="LastNews" />
     <Titles title="Our latest kits" class="pb-4" />
-    <Kits :kits="LastKits" />
+    <Kits :kits="LastKits"/>
     <p>home page</p>
   </div>
 </template>
