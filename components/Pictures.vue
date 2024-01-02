@@ -1,15 +1,15 @@
 <template>
   <div>
     <!-- div 1 -->
-    <div v-if="pictures" class="flex flex-col gap-8 px-4 pb-4 py-2">
+    <div v-if="pictures" class="flex flex-col justify-center flex-wrap gap-8 px-4 pb-4 py-2 md:flex-row md:items-baseline">
       <!-- div by picture  -->
       <div
         v-for="picture in pictures"
         :key="picture.id"
         :class="{ visible: isVisible }"
-        class="fade-scroll"
+        class="fade-scroll md:w-[45%]"
       >
-        <NuxtLink :to="picture.slug.current" class="flex justify-center">
+        <NuxtLink :to="picture.slug.current" class="flex justify-center md:flex-col md:items-center gap-2">
           <!-- image new -->
           <div class="text-center">
             <NuxtImg :src="picture.imageId.asset._ref" provider="sanity" class="w-72 max-h-72"/>
@@ -18,8 +18,8 @@
             </h2>
           </div>
           <!-- text new -->
-          <div class="hidden md:block">
-            <p>{{ truncateText(picture.text) }}</p>
+          <div class="hidden md:flex justify-center">
+            <p class="w-2/3 text-center">{{ truncateText(picture.text) }}</p>
           </div>
         </NuxtLink>
       </div>

@@ -113,19 +113,19 @@ export default {
           lien: "/",
         },
         {
-          texte: "Pictures",
-          lien: "/pictures",
+          texte: "News",
+          lien: "/news",
         },
         {
           texte: "Ocean Kit",
           lien: "/oceankit",
         },
         {
-          texte: "News",
-          lien: "/news",
+          texte: "Pictures",
+          lien: "/pictures",
         },
         {
-          texte: "Contact",
+          texte: "Contact 🚧",
           lien: "/contact",
         },
       ],

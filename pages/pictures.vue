@@ -1,6 +1,6 @@
 <template>
   <div class="text-center container mx-auto my-4">
-    <h2 class="text-2xl font-light mb-12 font-sans">Discover all the news</h2>
+    <h2 class="text-2xl font-light mb-12 font-sans">Discover our new photos</h2>
     <Pictures :pictures="Pictures" />
   </div>
 </template>
