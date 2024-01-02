@@ -8,7 +8,7 @@
       <div
         class="text-white text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-9 text-base uppercase z-10"
       >
-        <p>Webocean</p>
+        <p class="font-rubik-doodle-shadow font-bold tracking-[0.25rem]">Webocean</p>
       </div>
       <Wavesvg />
     </div>
@@ -17,11 +17,5 @@
 <script>
 export default {
   name: "VideoPage",
-  props: {
-    bgvideo: {
-      default: null,
-      type: Array,
-    },
-  },
 };
 </script>

@@ -2,7 +2,7 @@
   <!-- div slug news -->
   <div v-if="news" class="text-center">
     <div class="cursor-pointer pt-4" @click="goBack">
-      <span class="pl-2 py-3">
+      <span class="pl-2 py-3 font-rubik-doodle-shadow">
         <i class="fa-solid fa-arrow-left" />
         Back
       </span>
@@ -23,10 +23,11 @@
       >
         <!-- name of news -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <p
-            class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl font-extrabold font-sans"
-          >
-            {{ news.title }} | {{ formatDate(news.date) }}
+          <p class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl">
+            <span class="font-rubik-doodle-shadow">
+              {{ news.title }}
+            </span>
+            | {{ formatDate(news.date) }}
           </p>
           <!-- description of news -->
         </div>
@@ -41,7 +42,7 @@
   <!-- div slug kits -->
   <div v-else-if="kits" class="text-center">
     <div class="cursor-pointer pt-4" @click="goBack">
-      <span class="pl-2 py-3">
+      <span class="pl-2 py-3 font-rubik-doodle-shadow">
         <i class="fa-solid fa-arrow-left" />
         Back
       </span>
@@ -62,10 +63,11 @@
       >
         <!-- name of kits -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <p
-            class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl font-extrabold font-sans"
-          >
-            {{ kits.title }} - {{ kits.price }} €
+          <p class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl">
+            <span class="font-rubik-doodle-shadow">
+              {{ kits.title }}
+            </span>
+            - {{ kits.price }} €
           </p>
           <!-- description of news -->
         </div>
@@ -74,15 +76,11 @@
             {{ kits.description }}
           </p>
         </div>
-         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
+        <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
           <BtnBuy :kits="kits" />
         </div>
       </div>
     </div>
-  </div>
-  <!-- div error -->
-  <div v-else>
-    <Error404 />
   </div>
 </template>
 
@@ -103,14 +101,14 @@ export default {
     news() {
       return this.getNews.find((el) => el.slug.current === this.routeSlug);
     },
-    kits(){
-       return this.getKit.find((el) => el.slug.current === this.routeSlug);
-    }
+    kits() {
+      return this.getKit.find((el) => el.slug.current === this.routeSlug);
+    },
   },
   // Ajoutez cette méthode pour la redirection vers la page 404
   beforeMount() {
     if (!this.news && !this.kits) {
-      this.$router.push("../layouts/error"); // Assurez-vous que le chemin est correct
+      this.$router.push("../layouts/error");
     }
   },
   methods: {

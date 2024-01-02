@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <div class="text-xl font-blackmb-6 font-sans flex justify-center">
+    <div class="text-xl font-blackmb-6 flex justify-center">
       <p>Welcome</p>
       <NuxtImg
         :src="Bubbles.imageId.asset._ref"

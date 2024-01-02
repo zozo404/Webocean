@@ -1,6 +1,9 @@
 module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'rubik-doodle-shadow':['Rubik Doodle Shadow']
+    },
     extend: {
       colors: {
         darkblue: "#000B76",

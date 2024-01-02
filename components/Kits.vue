@@ -9,13 +9,12 @@
         >
           <!-- start card -->
           <div
+            :class="{ visible: isVisible }"
             v-for="kit in kits"
             :key="kit.id"
-            class="group group overflow-hidden relative text-black h-72 w-72 rounded-2xl"
+            class="group group overflow-hidden relative text-black h-72 w-72 rounded-2xl fade-scroll"
           >
-            <div
-              class="w-72 h-full bg-cover bg-center"
-            >
+            <div class="w-72 h-full bg-cover bg-center">
               <NuxtImg
                 :src="kit.imageId.asset._ref"
                 :alt="kit.imageId.alt"
@@ -43,18 +42,18 @@
               </div>
               <!-- description of kit -->
               <h1
-                class="font-bold text-3xl first-letter:uppercase pt-3 text-black"
+                class="font-bold text-3xl first-letter:uppercase pt-3 text-black font-rubik-doodle-shadow"
               >
                 {{ kit.title }}
               </h1>
               <!-- description of kit -->
-              <p class="">
+              <p class="font-bold">
                 {{ truncateDescription(kit.description) }}
               </p>
               <!-- btn buy -->
               <NuxtLink :to="kit.slug.current" class="flex justify-center">
                 <button
-                  class="smky-btn3 relative py-2 px-6 hover:text-white after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-10 after:z-[-10] after:bg-darkblue after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-black w-1/2 self-center"
+                  class="smky-btn3 relative py-2 px-6 hover:text-white after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-10 after:z-[-10] after:bg-darkblue after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-black w-1/2 self-center font-rubik-doodle-shadow font-bold"
                 >
                   More
                 </button>
@@ -73,24 +72,36 @@
   </div>
 </template>
 <script>
+import scrollFadeMixin from '~/mixins/scrollFadeMixin';
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Kits",
+  mixins: [scrollFadeMixin],
   props: {
     kits: {
       default: null,
-      type: Array
-    }
+      type: Array,
+    },
   },
   methods: {
-    truncateDescription (description) {
-      const maxLength = 110
+    truncateDescription(description) {
+      const maxLength = 110;
       if (description.length <= maxLength) {
-        return description
+        return description;
       } else {
-        return description.slice(0, maxLength) + "..."
+        return description.slice(0, maxLength) + "...";
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
+<style scoped>
+.fade-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-scroll.visible {
+  opacity: 1;
+}
+</style>
