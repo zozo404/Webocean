@@ -9,13 +9,12 @@
         >
           <!-- start card -->
           <div
+            :class="{ visible: isVisible }"
             v-for="kit in kits"
             :key="kit.id"
-            class="group group overflow-hidden relative text-black h-72 w-72 rounded-2xl"
+            class="group group overflow-hidden relative text-black h-72 w-72 rounded-2xl fade-scroll"
           >
-            <div
-              class="w-72 h-full bg-cover bg-center"
-            >
+            <div class="w-72 h-full bg-cover bg-center">
               <NuxtImg
                 :src="kit.imageId.asset._ref"
                 :alt="kit.imageId.alt"
@@ -73,24 +72,36 @@
   </div>
 </template>
 <script>
+import scrollFadeMixin from '~/mixins/scrollFadeMixin';
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Kits",
+  mixins: [scrollFadeMixin],
   props: {
     kits: {
       default: null,
-      type: Array
-    }
+      type: Array,
+    },
   },
   methods: {
-    truncateDescription (description) {
-      const maxLength = 110
+    truncateDescription(description) {
+      const maxLength = 110;
       if (description.length <= maxLength) {
-        return description
+        return description;
       } else {
-        return description.slice(0, maxLength) + "..."
+        return description.slice(0, maxLength) + "...";
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
+<style scoped>
+.fade-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-scroll.visible {
+  opacity: 1;
+}
+</style>

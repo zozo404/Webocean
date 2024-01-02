@@ -3,19 +3,24 @@
     <!-- div 1 -->
     <div v-if="news" class="flex flex-col gap-8 px-4 pb-4">
       <!-- div by news  -->
-      <div v-for="news in news" :key="news.id">
+      <div
+        v-for="news in news"
+        :key="news.id"
+        :class="{ visible: isVisible }"
+        class="fade-scroll"
+      >
         <NuxtLink :to="news.slug.current" class="flex justify-center">
-        <!-- image new -->
-        <div class="text-center">
-          <NuxtImg :src="news.imageId.asset._ref" provider="sanity" />
-          <h2 class="first-letter:uppercase">
-            {{ news.title }} - {{ formatDate(news.date) }}
-          </h2>
-        </div>
-        <!-- text new -->
-        <div class="hidden md:block">
-          <p>{{ truncateDescription(news.description) }}</p>
-        </div>
+          <!-- image new -->
+          <div class="text-center">
+            <NuxtImg :src="news.imageId.asset._ref" provider="sanity" />
+            <h2 class="first-letter:uppercase">
+              {{ news.title }} - {{ formatDate(news.date) }}
+            </h2>
+          </div>
+          <!-- text new -->
+          <div class="hidden md:block">
+            <p>{{ truncateDescription(news.description) }}</p>
+          </div>
         </NuxtLink>
       </div>
     </div>
@@ -23,8 +28,10 @@
 </template>
 
 <script>
+import scrollFadeMixin from '~/mixins/scrollFadeMixin';
 export default {
   name: "News",
+  mixins: [scrollFadeMixin],
   props: {
     news: {
       default: null,
@@ -47,3 +54,13 @@ export default {
   },
 };
 </script>
+<style scoped>
+.fade-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-scroll.visible {
+  opacity: 1;
+}
+</style>
