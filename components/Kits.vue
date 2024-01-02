@@ -5,7 +5,7 @@
       <div>
         <div
           v-if="kits"
-          class="rounded-lg overflow-hidden flex flex-wrap justify-center gap-5 py-2"
+          class="rounded-lg overflow-hidden flex flex-wrap justify-center gap-5 py-2 pb-4"
         >
           <!-- start card -->
           <div
@@ -95,13 +95,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.fade-scroll {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.fade-scroll.visible {
-  opacity: 1;
-}
-</style>
