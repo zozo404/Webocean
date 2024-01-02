@@ -12,7 +12,7 @@
         <NuxtLink :to="news.slug.current" class="flex justify-center">
           <!-- image new -->
           <div class="text-center">
-            <NuxtImg :src="news.imageId.asset._ref" provider="sanity" />
+            <NuxtImg :src="news.imageId.asset._ref" provider="sanity" class="rounded-2xl w-72 max-h-72" />
             <h2 class="first-letter:uppercase">
               {{ news.title }} - {{ formatDate(news.date) }}
             </h2>
