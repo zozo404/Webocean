@@ -95,13 +95,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.fade-scroll {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.fade-scroll.visible {
-  opacity: 1;
-}
-</style>

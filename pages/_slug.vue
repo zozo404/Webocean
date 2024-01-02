@@ -16,15 +16,16 @@
         :src="news.imageId.asset._ref"
         :alt="news.imageId.alt"
         placeholder
-        class="w-auto h-auto sm:w-1/2 rounded-md 2xl:max-w-xl 3xl:max-w-2xl"
+        class="w-auto h-auto sm:w-1/2 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
+        :class="{ visible: isVisible }"
       />
       <div
         class="px-2 md:w-2/3 lg:w-auto lg:flex lg:flex-col lg:items-center lg:grow"
       >
         <!-- name of news -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <p class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl">
-            <span class="font-rubik-doodle-shadow">
+          <p class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl fade-scroll" :class="{ visible: isVisible }">
+            <span class="font-rubik-doodle-shadow" >
               {{ news.title }}
             </span>
             | {{ formatDate(news.date) }}
@@ -32,7 +33,7 @@
           <!-- description of news -->
         </div>
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <p class="first-letter:uppercase">
+          <p class="first-letter:uppercase fade-scroll" :class="{ visible: isVisible }">
             {{ news.description }}
           </p>
         </div>
@@ -56,15 +57,16 @@
         :src="kits.imageId.asset._ref"
         :alt="kits.imageId.alt"
         placeholder
-        class="w-auto h-auto sm:w-1/2 rounded-md 2xl:max-w-xl 3xl:max-w-2xl"
+        class="w-auto h-auto sm:w-1/2 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
+        :class="{ visible: isVisible }"
       />
       <div
         class="px-2 md:w-2/3 lg:w-auto lg:flex lg:flex-col lg:items-center lg:grow"
       >
         <!-- name of kits -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <p class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl">
-            <span class="font-rubik-doodle-shadow">
+          <p class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl fade-scroll" :class="{ visible: isVisible }">
+            <span class="font-rubik-doodle-shadow" >
               {{ kits.title }}
             </span>
             - {{ kits.price }} €
@@ -72,7 +74,7 @@
           <!-- description of news -->
         </div>
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <p class="first-letter:uppercase">
+          <p class="first-letter:uppercase fade-scroll" :class="{ visible: isVisible }">
             {{ kits.description }}
           </p>
         </div>
@@ -87,9 +89,12 @@
 <script>
 import { mapGetters } from "vuex";
 import BtnBuy from "@/components/BtnBuy.vue";
+import scrollFadeMixin from '~/mixins/scrollFadeMixin';
+
 
 export default {
   name: "SlugPage",
+  mixins: [scrollFadeMixin],
   components: {
     BtnBuy,
   },
