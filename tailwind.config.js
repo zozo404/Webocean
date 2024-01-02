@@ -14,6 +14,7 @@ module.exports = {
       }
     },
     screens: {
+      SamsungGA425G: "360px",
       iphoneSE: "375px",
       iphone12pro: "390px",
       sm: "640px",

@@ -117,7 +117,7 @@
         :class="{ visible: isVisible }"
       />
       <div
-        class="px-2 md:w-2/3 lg:w-auto lg:flex lg:flex-col lg:items-center lg:grow"
+        class="px-2 md:w-2/3 lg:w-auto lg:flex lg:flex-col lg:items-center lg:grow flex-1"
       >
         <!-- name of pictures -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">

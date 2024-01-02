@@ -2,18 +2,10 @@
   <div>
     <footer class="bg-bluefooter text-gray-100 relative pb-4 lg:pt-0">
     <BottomSvg />
-      <div class="px-2">
-        <p class="pb-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum magni
-          ex facilis dolorem, commodi ducimus quibusdam, deleniti officiis
-          corporis molestiae voluptatum quidem nam nobis accusamus unde est
-          ipsam labore harum!
-        </p>
-      </div>
       <div>
         <div class="pt-4">
           <!-- summary -->
-          <ul class="flex justify-around">
+          <ul class="flex justify-around text-center gap-1">
             <li
               v-for="section in sections"
               :key="section.id"
@@ -44,9 +36,9 @@ export default {
     return {
       sections: [
         { id: 1, name: "Home", link: "/" },
-        { id: 3, name: "Pictures", link: "pictures" },
-        { id: 2, name: "Ocean Kit", link: "oceankit" },
-        { id: 4, name: "News", link: "news" },
+        { id: 2, name: "News", link: "news" },
+        { id: 3, name: "Ocean Kit", link: "oceankit" },
+        { id: 4, name: "Pictures", link: "pictures" },
         { id: 5, name: "Contact", link: "contact" },
       ],
     };

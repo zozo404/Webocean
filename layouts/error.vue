@@ -29,7 +29,7 @@
             The page you are looking for might be under construction or does not
             exist.
           </p>
-          <a href="/" class="text-indigo-500 hover:underline mt-4 block animate-bounce">
+          <a href="/" class="text-red-600 hover:underline mt-4 block animate-bounce">
             Go back home
           </a>
         </div>

@@ -2,7 +2,7 @@
   <div class="bg-darkblue text-white">
     <Header />
     <Video />
-    <Nuxt class="px-8 pt-4" />
+    <Nuxt class="SamsungGA425G:px-8 pt-4" />
     <Footer />
   </div>
 </template>
