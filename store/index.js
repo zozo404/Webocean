@@ -33,7 +33,7 @@ export const actions = {
     async nuxtServerInit({ dispatch }, { $axios }) {
         const kit = await $axios.$get('https://4qizwmnw.api.sanity.io/v2022-03-07/data/query/production?query=*[_type == "kit"]{id, title, description,"imageId":image{asset,alt}, slug, new, price, stripeUrl}')
 
-        const imageSite = await $axios.$get('https://4qizwmnw.api.sanity.io/v2022-03-07/data/query/production?query=*[_type == "imageSite"]{name, slug, date, "imageId":image{asset,alt},titre,text}')
+        const imageSite = await $axios.$get('https://4qizwmnw.api.sanity.io/v2022-03-07/data/query/production?query=*[_type == "imageSite"]{name, slug, date, images[]{asset,alt},titre,text}')
 
         const news = await $axios.$get('https://4qizwmnw.api.sanity.io/v2022-03-07/data/query/production?query=*[_type=="news"]{title, slug, date, description,"imageId":image{asset,alt}, new}')
 

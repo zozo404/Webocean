@@ -9,7 +9,7 @@
       <NuxtLink to="/" class="flex justify-center lg:col-span-1 h-full">
         <span class="sr-only">Logo</span>
         <NuxtImg
-          :src="Logo.imageId.asset._ref"
+          :src="Logo.images[0].asset._ref"
           provider="sanity"
           alt="logo"
           class="h-full"
@@ -52,7 +52,7 @@
         <NuxtLink to="/" class="flex justify-center lg:col-span-1 h-full">
           <span class="sr-only">Logo</span>
           <NuxtImg
-            :src="Logo.imageId.asset._ref"
+            :src="Logo.images[0].asset._ref"
             provider="sanity"
             alt="logo"
             class="h-full"

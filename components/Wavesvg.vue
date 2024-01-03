@@ -1,7 +1,7 @@
 <template>
   <div class="absolute bottom-0 w-full z-10" v-if="Waves">
     <NuxtImg
-      :src="Waves.imageId.asset._ref"
+      :src="Waves.images[0].asset._ref"
       provider="sanity"
       alt="logo"
       class="w-full"
