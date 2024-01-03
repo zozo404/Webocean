@@ -31,7 +31,7 @@
           <NuxtLink
             key="Index"
             :to="lien.lien"
-            class="text-base lg:text-xl 2xl:text-2xl font-medium hover:text-orange-400 transition"
+            class="text-base lg:text-xl 2xl:text-2xl font-medium hover:text-[#68C3D4] transition"
             @click="toggle"
           >
             {{ lien.texte }}
@@ -80,7 +80,7 @@
         <NuxtLink
           key="Index"
           :to="lien.lien"
-          class="text-2xl font-medium hover:text-orange-400 transition"
+          class="text-2xl font-medium hover:text-[#68C3D4] transition"
         >
           {{ lien.texte }}
         </NuxtLink>
@@ -125,7 +125,7 @@ export default {
           lien: "/pictures",
         },
         {
-          texte: "Contact 🚧",
+          texte: "Contact",
           lien: "/contact",
         },
       ],

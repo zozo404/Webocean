@@ -5,6 +5,7 @@
       <NuxtImg
         :src="Bubbles.imageId.asset._ref"
         class="w-8"
+        :alt="Bubbles.imageId.alt"
         provider="sanity"
       />
     </div>

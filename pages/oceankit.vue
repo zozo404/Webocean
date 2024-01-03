@@ -1,21 +1,21 @@
 <template>
-  <div class="text-center container mx-auto my-4">
-    <h2 class="text-2xl font-light mb-12 font-sans">
+  <div class="my-4">
+    <h1 class="text-3xl font-extrabold mb-12 font-sans font-rubik-doodle-shadow text-center">
       Discover our kits
-    </h2>
+    </h1>
     <Kits :kits="Kits" />
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters } from "vuex";
 
 export default {
   name: "OceanKit",
   computed: {
     ...mapGetters(["getKit"]),
-    Kits () {
-      return this.getKit
-    }
-  }
-}
+    Kits() {
+      return this.getKit;
+    },
+  },
+};
 </script>

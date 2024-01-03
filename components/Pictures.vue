@@ -12,7 +12,7 @@
         <NuxtLink :to="picture.slug.current" class="flex justify-center md:flex-col md:items-center gap-2">
           <!-- image new -->
           <div class="text-center">
-            <NuxtImg :src="picture.imageId.asset._ref" provider="sanity" class="w-72 max-h-72"/>
+            <NuxtImg :src="picture.imageId.asset._ref" :alt="picture.imageId.alt" provider="sanity" class="w-72 max-h-72"/>
             <h2 class="first-letter:uppercase">
               {{ picture.name }} - {{ formatDate(picture.date) }}
             </h2>

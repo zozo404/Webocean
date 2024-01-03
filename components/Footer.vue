@@ -9,7 +9,7 @@
             <li
               v-for="section in sections"
               :key="section.id"
-              class="hover:text-orange-200 transition fade-scroll"
+              class="hover:text-[#68C3D4] transition fade-scroll"
               :class="{ visible: isVisible }"
             >
               <NuxtLink :to="section.link">
