@@ -1,18 +1,18 @@
 <template>
   <div>
     <!-- div 1 -->
-    <div v-if="pictures" class="flex flex-col justify-center flex-wrap gap-8 px-4 pb-4 py-2 md:flex-row md:items-baseline">
+    <div v-if="pictures" class="flex flex-col justify-center flex-wrap gap-8 xl:gap-28 px-4 pb-4 py-2 md:flex-row md:items-baseline">
       <!-- div by picture  -->
       <div
         v-for="picture in pictures"
         :key="picture.id"
         :class="{ visible: isVisible }"
-        class="fade-scroll md:w-[45%]"
+        class="fade-scroll md:w-[45%] lg:w-72"
       >
         <NuxtLink :to="picture.slug.current" class="flex justify-center md:flex-col md:items-center gap-2">
           <!-- image new -->
           <div class="text-center">
-            <NuxtImg :src="picture.imageId.asset._ref" provider="sanity" class="w-72 max-h-72"/>
+            <NuxtImg :src="picture.imageId.asset._ref" :alt="picture.imageId.alt" provider="sanity" class="w-72 max-h-72"/>
             <h2 class="first-letter:uppercase">
               {{ picture.name }} - {{ formatDate(picture.date) }}
             </h2>

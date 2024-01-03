@@ -1,21 +1,23 @@
 <template>
-  <div class="text-center container mx-auto my-4">
-    <h2 class="text-2xl font-light mb-12 font-sans">
+  <div class="my-4">
+    <h1
+      class="text-3xl font-extrabold mb-12 font-sans font-rubik-doodle-shadow text-center"
+    >
       Discover all the news
-    </h2>
+    </h1>
     <News :news="News" />
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters } from "vuex";
 
 export default {
   name: "NewsPAge",
   computed: {
     ...mapGetters(["getNews"]),
-    News () {
-      return this.getNews
-    }
-  }
-}
+    News() {
+      return this.getNews;
+    },
+  },
+};
 </script>

@@ -1,12 +1,12 @@
 <template>
   <div>
     <ContentMain />
-    <Titles title="Latest News" class="pb-4" />
+    <Titles title="Latest News" />
     <News :news="LastNews" />
-    <Titles title="Our latest kits" class="pb-4" />
+    <Titles title="Our latest kits" />
     <Kits :kits="LastKits" />
-    <Titles title="Our latest pictures" class="pb-4" />
-    <Pictures :pictures="picturesWithDate" />
+    <Titles title="Our latest pictures" />
+    <Pictures :pictures="LastPictures" />
   </div>
 </template>
 <script>
@@ -23,22 +23,22 @@ export default {
         (a, b) => new Date(b.date) - new Date(a.date)
       );
 
-      return sliceNews.slice(0, 2);
+      return sliceNews.slice(0, 3);
     },
     LastKits() {
       const LastKits = this.getKit.filter((kits) => kits.new === true);
       // descending ID
       const sliceKits = LastKits.slice().sort((a, b) => b.id - a.id);
 
-      return sliceKits.slice(0, 2);
+      return sliceKits.slice(0, 3);
     },
-    picturesWithDate() {
+    LastPictures() {
       // Filtrer les images qui ont une date
-      const picturesWithDate = this.getImageSite.filter((picture) => picture.date);
+      const LastPictures = this.getImageSite.filter((picture) => picture.date);
 
       // descendind ID
-      const slicePictures = picturesWithDate.slice().sort((a, b) => b.id - a.id);
-      return slicePictures.slice(0, 2);
+      const slicePictures = LastPictures.slice().sort((a, b) => b.id - a.id);
+      return slicePictures.slice(0, 3);
     },
   },
 };

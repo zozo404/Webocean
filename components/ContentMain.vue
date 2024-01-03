@@ -1,10 +1,11 @@
 <template>
   <div class="text-center">
-    <div class="text-xl font-blackmb-6 flex justify-center fade-scroll" :class="{ visible: isVisible }">
+    <div class="text-xl 3xl:text-2xl font-blackmb-6 flex justify-center fade-scroll" :class="{ visible: isVisible }">
       <p>Welcome</p>
       <NuxtImg
         :src="Bubbles.imageId.asset._ref"
         class="w-8"
+        :alt="Bubbles.imageId.alt"
         provider="sanity"
       />
     </div>

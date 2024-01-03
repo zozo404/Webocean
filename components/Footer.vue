@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer class="bg-bluefooter text-gray-100 relative pb-4 lg:pt-0">
-    <BottomSvg />
+      <BottomSvg />
       <div>
         <div class="pt-4">
           <!-- summary -->
@@ -9,7 +9,8 @@
             <li
               v-for="section in sections"
               :key="section.id"
-              class="hover:text-orange-200 transition"
+              class="hover:text-[#68C3D4] transition fade-scroll"
+              :class="{ visible: isVisible }"
             >
               <NuxtLink :to="section.link">
                 {{ section.name }}
@@ -20,7 +21,7 @@
       </div>
       <!-- copyrights -->
       <div class="text-center pt-4">
-        <p>
+        <p class="fade-scroll" :class="{ visible: isVisible }">
           &copy; 2023-2024 Webocean.netlify.app <br />
           All rights reserved
         </p>
@@ -29,9 +30,12 @@
   </div>
 </template>
 <script>
+import scrollFadeMixin from "~/mixins/scrollFadeMixin";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Footer",
+  mixins: [scrollFadeMixin],
   data() {
     return {
       sections: [
