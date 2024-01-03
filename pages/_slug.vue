@@ -105,41 +105,43 @@
       </span>
     </div>
     <div
-      class="flex flex-col items-center mt-10 gap-4 lg:flex-row lg:px-12 2xl:px-24 3xl:px-28"
+      class="flex flex-row overflow-auto items-center mt-10 gap-4 lg:px-12 2xl:px-24 3xl:px-28 rounded-md"
     >
       <!-- img -->
       <NuxtImg
+        v-for="image in pictures.images"
+        :key="image._id"
         provider="sanity"
-        :src="pictures.imageId.asset._ref"
-        :alt="pictures.imageId.alt"
+        :src="image.asset._ref"
+        :alt="image.alt"
         placeholder
-        class="w-auto h-auto sm:w-1/2 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
+        class="w-full h-auto lg:w-1/2 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
         :class="{ visible: isVisible }"
       />
-      <div
-        class="px-2 md:w-2/3 lg:w-auto lg:flex lg:flex-col lg:items-center lg:grow flex-1"
-      >
-        <!-- name of pictures -->
-        <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <p
-            class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl fade-scroll"
-            :class="{ visible: isVisible }"
-          >
-            <span class="font-rubik-doodle-shadow">
-              {{ pictures.name }}
-            </span>
-            | {{ formatDate(pictures.date) }}
-          </p>
-          <!-- text of pictures -->
-        </div>
-        <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <p
-            class="first-letter:uppercase fade-scroll"
-            :class="{ visible: isVisible }"
-          >
-            {{ pictures.text }}
-          </p>
-        </div>
+    </div>
+    <div
+      class="px-2 lg:w-auto lg:flex lg:flex-col lg:items-center lg:grow flex-1"
+    >
+      <!-- name of pictures -->
+      <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
+        <p
+          class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl fade-scroll"
+          :class="{ visible: isVisible }"
+        >
+          <span class="font-rubik-doodle-shadow">
+            {{ pictures.name }}
+          </span>
+          | {{ formatDate(pictures.date) }}
+        </p>
+      </div>
+      <!-- text of pictures -->
+      <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
+        <p
+          class="first-letter:uppercase fade-scroll"
+          :class="{ visible: isVisible }"
+        >
+          {{ pictures.text }}
+        </p>
       </div>
     </div>
   </div>
@@ -195,3 +197,23 @@ export default {
   },
 };
 </script>
+<style scoped>
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #18181b;
+    border-radius: 1rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FED7AA;
+    border-radius: 1rem;
+    border: 3px solid #000000;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+</style>

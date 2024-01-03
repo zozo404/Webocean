@@ -23,7 +23,7 @@ export default {
     {
       src: "https://kit.fontawesome.com/5d5fd51001.js",
       crossorigin: "anonymous"
-    },
+    }
   ],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
