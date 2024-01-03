@@ -16,7 +16,7 @@
         :src="news.imageId.asset._ref"
         :alt="news.imageId.alt"
         placeholder
-        class="w-auto h-auto sm:w-1/2 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
+        class="w-auto h-auto sm:w-4/6 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
         :class="{ visible: isVisible }"
       />
       <div
@@ -63,7 +63,7 @@
         :src="kits.imageId.asset._ref"
         :alt="kits.imageId.alt"
         placeholder
-        class="w-auto h-auto sm:w-1/2 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
+        class="w-auto h-auto sm:w-4/6 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
         :class="{ visible: isVisible }"
       />
       <div
@@ -116,7 +116,7 @@
           :src="image.asset._ref"
           :alt="image.alt"
           placeholder
-          class="w-full h-auto rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
+          class="w-full sm:w-4/6 2xl:w-full h-auto rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
           :class="{
             visible: isVisible,
             'hidden-slide': currentSlide !== index,
