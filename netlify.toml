@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "/200"
+  status = 404
+  force = true
