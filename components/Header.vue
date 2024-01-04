@@ -43,7 +43,7 @@
     <!-- nav responsive ouverte -->
     <nav
       :class="{ hidden: isActive }"
-      class="lg:hidden w-full absolute top-0 h-screen z-40 grid grid-cols-2 grid-rows-4 bg-opacity-40 backdrop-blur-sm bg-black"
+      class="lg:hidden w-full absolute top-0 h-screen z-40 grid grid-cols-2 grid-rows-4 bg-opacity-40 backgroundBlur bg-black"
     >
       <div
         class="grid grid-cols-2 grid-rows-1 col-span-2 my-4 h-12 justify-items-center w-full "
