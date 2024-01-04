@@ -116,7 +116,7 @@
           :src="image.asset._ref"
           :alt="image.alt"
           placeholder
-          class="w-full sm:w-4/6 2xl:w-full h-auto rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
+          class="w-full sm:w-4/6 2xl:w-full rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll h-72  2xl:h-96"
           :class="{
             visible: isVisible,
             'hidden-slide': currentSlide !== index,
