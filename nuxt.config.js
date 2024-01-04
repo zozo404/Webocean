@@ -66,4 +66,7 @@ export default {
       projectId: "4qizwmnw"
     }
   },
+  generate: {
+    fallback: true,
+  },
 }
