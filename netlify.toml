@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/*"
+  from = "/404"
   to = "/200"
   status = 404
   force = true
