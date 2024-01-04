@@ -30,7 +30,12 @@ html {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-
+.backgroundBlur{
+  backdrop-filter: blur(4px);
+}
+.blur-element{
+  filter: blur(1px);
+}
 .fade-scroll.visible {
   opacity: 1;
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="relative overflow-hidden">
-      <video autoplay loop muted playsinline class="blur-1 w-full">
+      <video autoplay loop muted playsinline class="blur-element w-full">
         <source src="/oceanVideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
