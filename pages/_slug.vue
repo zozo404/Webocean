@@ -215,7 +215,7 @@ export default {
   // Ajoutez cette méthode pour la redirection vers la page 404
   beforeMount() {
     if (!this.news && !this.kits && !this.pictures) {
-      this.$router.push("../layouts/error");
+      this.$router.push("@/error");
     }
   },
   methods: {
