@@ -6,13 +6,20 @@
         class="text-center container mx-auto my-14 flex items-center justify-center md:my-24 lg:my"
       >
         <div class="text-center">
-          <h1 class="text-6xl font-bold font-rubik-doodle-shadow">404</h1>
+          <h1 class="text-6xl font-bold font-rubik-doodle-shadow animation-target">
+            <span class="letter" style="opacity: 0">4</span>
+            <span class="letter" style="opacity: 0">0</span>
+            <span class="letter" style="opacity: 0">4</span>
+          </h1>
           <p class="text-xl font-semibold">Page not found</p>
           <p>
             The page you are looking for might be under construction or does not
             exist.
           </p>
-          <a href="/" class="text-red-600 text-2xl hover:underline mt-4 block animate-bounce">
+          <a
+            href="/"
+            class="text-red-600 text-2xl hover:underline mt-4 block animate-bounce"
+          >
             Go back home
           </a>
         </div>
@@ -29,7 +36,10 @@
             The page you are looking for might be under construction or does not
             exist.
           </p>
-          <a href="/" class="text-red-600 hover:underline mt-4 block animate-bounce">
+          <a
+            href="/"
+            class="text-red-600 hover:underline mt-4 block animate-bounce"
+          >
             Go back home
           </a>
         </div>
@@ -39,9 +49,25 @@
 </template>
 
 <script>
+import anime from "animejs";
 export default {
   layout: "error-layout",
   // eslint-disable-next-line vue/require-prop-types
   props: ["error"], // you can set a custom layout for the error page
+  mounted() {
+    this.playAnimation();
+  },
+  methods: {
+    playAnimation() {
+      anime({
+        targets: ".animation-target .letter",
+        opacity: [0, 1],
+        easing: 'easeInOutQuad',
+        delay: anime.stagger(500), // Délai entre chaque lettre
+        duration: 2000,
+        loop: true,
+      });
+    },
+  },
 };
 </script>
