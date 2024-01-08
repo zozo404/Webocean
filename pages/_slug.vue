@@ -7,20 +7,24 @@
         Back
       </span>
     </div>
-    <div
-      class="flex flex-col items-center mt-10 gap-4 lg:flex-row lg:px-12 2xl:px-24 3xl:px-28"
-    >
-      <!-- img -->
-      <NuxtImg
-        provider="sanity"
-        :src="news.imageId.asset._ref"
-        :alt="news.imageId.alt"
-        placeholder
-        class="w-auto h-auto sm:w-4/6 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
-        :class="{ visible: isVisible }"
-      />
+    <div class="lg:flex">
       <div
-        class="px-2 md:w-2/3 lg:w-auto lg:flex lg:flex-col lg:items-center lg:grow"
+        class="flex flex-col items-center mt-10 gap-4 rounded-md justify-center lg:flex-1"
+      >
+        <!-- img -->
+        <NuxtImg
+          provider="sanity"
+          :src="news.imageId.asset._ref"
+          :alt="news.imageId.alt"
+          placeholder
+          class="w-full sm:w-4/6 2xl:w-full rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll h-72 2xl:h-96"
+          :class="{
+            visible: isVisible,
+          }"
+        />
+      </div>
+      <div
+        class="px-2 lg:w-auto lg:flex lg:flex-col lg:items-center lg:justify-center lg:grow flex-1"
       >
         <!-- name of news -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
@@ -28,13 +32,14 @@
             class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl fade-scroll"
             :class="{ visible: isVisible }"
           >
-            <span class="font-rubik-doodle-shadow">
-              {{ news.title }}
-            </span>
+            <span
+              class="font-rubik-doodle-shadow bg-[#68C3D4] text-black font-bold px-2"
+              >{{ news.title }}</span
+            >
             | {{ formatDate(news.date) }}
           </p>
-          <!-- description of news -->
         </div>
+        <!-- text of news -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
           <p
             class="first-letter:uppercase fade-scroll"
@@ -54,20 +59,24 @@
         Back
       </span>
     </div>
-    <div
-      class="flex flex-col items-center mt-10 gap-4 lg:flex-row lg:px-12 2xl:px-24 3xl:px-28"
-    >
-      <!-- img -->
-      <NuxtImg
-        provider="sanity"
-        :src="kits.imageId.asset._ref"
-        :alt="kits.imageId.alt"
-        placeholder
-        class="w-auto h-auto sm:w-4/6 rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll"
-        :class="{ visible: isVisible }"
-      />
+    <div class="lg:flex">
       <div
-        class="px-2 md:w-2/3 lg:w-auto lg:flex lg:flex-col lg:items-center lg:grow"
+        class="flex flex-col items-center mt-10 gap-4 rounded-md justify-center lg:flex-1"
+      >
+        <!-- img -->
+        <NuxtImg
+          provider="sanity"
+          :src="kits.imageId.asset._ref"
+          :alt="kits.imageId.alt"
+          placeholder
+          class="w-full sm:w-4/6 2xl:w-full rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll h-full"
+          :class="{
+            visible: isVisible,
+          }"
+        />
+      </div>
+      <div
+        class="px-2 lg:w-auto lg:flex lg:flex-col lg:items-center lg:justify-center lg:grow flex-1"
       >
         <!-- name of kits -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
@@ -75,13 +84,14 @@
             class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl fade-scroll"
             :class="{ visible: isVisible }"
           >
-            <span class="font-rubik-doodle-shadow">
-              {{ kits.title }}
-            </span>
-            - {{ kits.price }} €
+            <span
+              class="font-rubik-doodle-shadow bg-[#68C3D4] text-black font-bold px-2"
+              >{{ kits.title }}</span
+            >
+            | {{ kits.price }}€
           </p>
-          <!-- description of news -->
         </div>
+        <!-- text of pictures -->
         <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
           <p
             class="first-letter:uppercase fade-scroll"
@@ -89,9 +99,6 @@
           >
             {{ kits.description }}
           </p>
-        </div>
-        <div class="mt-4 px-5 flex flex-col text-center md:w-auto lg:w-auto">
-          <BtnBuy :kits="kits" />
         </div>
       </div>
     </div>
@@ -106,7 +113,7 @@
     </div>
     <div class="lg:flex">
       <div
-        class="flex flex-col items-center mt-10 gap-4  rounded-md justify-center lg:flex-1"
+        class="flex flex-col items-center mt-10 gap-4 rounded-md justify-center lg:flex-1"
       >
         <!-- img -->
         <NuxtImg
@@ -116,7 +123,7 @@
           :src="image.asset._ref"
           :alt="image.alt"
           placeholder
-          class="w-full sm:w-4/6 2xl:w-full rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll h-72  2xl:h-96"
+          class="w-full sm:w-4/6 2xl:w-full rounded-md 2xl:max-w-xl 3xl:max-w-2xl fade-scroll h-72 2xl:h-96"
           :class="{
             visible: isVisible,
             'hidden-slide': currentSlide !== index,
@@ -156,7 +163,10 @@
             class="first-letter:uppercase text-xl lg:text-2xl xl:text-3xl fade-scroll"
             :class="{ visible: isVisible }"
           >
-            <span class="font-rubik-doodle-shadow">{{ pictures.name }}</span>
+            <span
+              class="font-rubik-doodle-shadow bg-[#68C3D4] text-black font-bold px-2"
+              >{{ pictures.name }}</span
+            >
             | {{ formatDate(pictures.date) }}
           </p>
         </div>
