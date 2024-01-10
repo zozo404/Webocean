@@ -23,7 +23,7 @@
       <div class="text-center pt-4">
         <p class="fade-scroll" :class="{ visible: isVisible }">
           &copy; 2023-2024 Webocean.netlify.app <br />
-          All rights reserved
+          <NuxtLink to="legal-mention">Legal Mention</NuxtLink> | All rights reserved
         </p>
       </div>
     </footer>
