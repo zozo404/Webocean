@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-4">
     <!-- Bouton d'achat -->
     <a :href="kits.stripeUrl" class="flex justify-center font-rubik-doodle-shadow">
       <button

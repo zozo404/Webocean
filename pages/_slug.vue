@@ -99,6 +99,7 @@
           >
             {{ kits.description }}
           </p>
+          <BtnBuy :kits="kits"/>
         </div>
       </div>
     </div>
