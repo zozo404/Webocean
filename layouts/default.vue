@@ -39,4 +39,21 @@ html {
 .fade-scroll.visible {
   opacity: 1;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000B76;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #68C3D4;
+    border-radius: 1rem;
+    border: 3px solid #000B76;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
 </style>

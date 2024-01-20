@@ -37,7 +37,9 @@ export default {
       const LastPictures = this.getImageSite.filter((picture) => picture.date);
 
       // descendind ID
-      const slicePictures = LastPictures.slice().sort((a, b) => b.id - a.id);
+      const slicePictures = LastPictures.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
       return slicePictures.slice(0, 3);
     },
   },
