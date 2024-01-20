@@ -1,25 +1,40 @@
 <template>
   <div>
     <!-- div 1 -->
-    <div v-if="news" class="flex flex-wrap justify-center gap-8 xl:gap-28 px-4 pb-4 ">
+    <div
+      v-if="news"
+      class="flex flex-wrap justify-center gap-8 px-4 pb-4"
+    >
       <!-- div by news  -->
       <div
-        v-for="news in news"
+        v-for="(news, index) in news"
         :key="news.id"
+        class="fade-scroll text-center  flex"
         :class="{ visible: isVisible }"
-        class="fade-scroll text-center md:w-[45%] lg:w-72"
       >
-        <NuxtLink :to="news.slug.current" class="flex justify-center md:flex-col md:items-center gap-2">
+        <NuxtLink
+          :to="news.slug.current"
+          class="flex sm:items-center gap-2"
+          :class="{
+            'flex-row': index % 2 === 0,
+            'flex-row-reverse': index % 2 !== 0,
+          }"
+        >
           <!-- image new -->
           <div class="text-center">
-            <NuxtImg :src="news.imageId.asset._ref" :alt="news.imageId.alt" provider="sanity" class="rounded-2xl w-72 max-h-72" />
+            <NuxtImg
+              :src="news.imageId.asset._ref"
+              :alt="news.imageId.alt"
+              provider="sanity"
+              class="rounded-2xl w-72 sm:w-[50rem] lg:w-[33rem] max-h-72"
+            />
             <h2 class="first-letter:uppercase">
               {{ news.title }} - {{ formatDate(news.date) }}
             </h2>
           </div>
           <!-- text new -->
-          <div class="hidden md:flex justify-center">
-            <p class="w-2/3">{{ truncateDescription(news.description) }}</p>
+          <div class="hidden sm:flex justify-center">
+            <p class="sm:w-[70%] lg:w-4/5">{{ truncateDescription(news.description) }}</p>
           </div>
         </NuxtLink>
       </div>
@@ -28,7 +43,7 @@
 </template>
 
 <script>
-import scrollFadeMixin from '~/mixins/scrollFadeMixin';
+import scrollFadeMixin from "~/mixins/scrollFadeMixin";
 export default {
   name: "News",
   mixins: [scrollFadeMixin],
@@ -37,6 +52,11 @@ export default {
       default: null,
       type: Array,
     },
+  },
+  data() {
+    return {
+      isVisible: true,
+    };
   },
   methods: {
     truncateDescription(description) {

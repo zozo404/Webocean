@@ -5,7 +5,7 @@
     >
       Discover all the news
     </h1>
-    <News :news="News" />
+    <News :news="LastNews" />
   </div>
 </template>
 <script>
@@ -15,8 +15,9 @@ export default {
   name: "NewsPAge",
   computed: {
     ...mapGetters(["getNews"]),
-    News() {
-      return this.getNews;
+    LastNews() {
+      const newsCopy = this.getNews.slice(); // Créez une copie du tableau
+      return newsCopy.sort((a, b) => new Date(b.date) - new Date(a.date));
     },
   },
 };

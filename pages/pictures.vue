@@ -17,7 +17,11 @@ export default {
       // Filtrer les images qui ont une date
       const pictures = this.getImageSite.filter((picture) => picture.date);
 
-      return pictures;
+      const slicePictures = pictures.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      return slicePictures.slice(0, 3);
+      
     },
   },
 };
