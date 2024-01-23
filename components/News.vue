@@ -3,18 +3,18 @@
     <!-- div 1 -->
     <div
       v-if="news"
-      class="flex flex-wrap justify-center gap-8 px-4 pb-4"
+      class="flex flex-col items-center flex-wrap justify-center gap-8 px-4 pb-4"
     >
       <!-- div by news  -->
       <div
         v-for="(news, index) in news"
         :key="news.id"
-        class="fade-scroll text-center  flex"
+        class="fade-scroll text-center w-full"
         :class="{ visible: isVisible }"
       >
         <NuxtLink
           :to="news.slug.current"
-          class="flex sm:items-center gap-2"
+          class="flex sm:items-center gap-4 lg:gap-8 xl:gap-32 2xl:gap-[12rem] w-full justify-center"
           :class="{
             'flex-row': index % 2 === 0,
             'flex-row-reverse': index % 2 !== 0,
@@ -34,7 +34,7 @@
           </div>
           <!-- text new -->
           <div class="hidden sm:flex justify-center">
-            <p class="sm:w-[70%] lg:w-4/5">{{ truncateDescription(news.description) }}</p>
+            <p class="sm:w-[20rem] xl:w-[33rem] 3xl:w-[40rem]">{{ truncateDescription(news.description) }}</p>
           </div>
         </NuxtLink>
       </div>
@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     truncateDescription(description) {
-      const maxLength = 110;
+      const maxLength = 200;
       if (description.length <= maxLength) {
         return description;
       } else {
