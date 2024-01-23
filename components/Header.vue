@@ -1,8 +1,11 @@
 <template>
-  <header class=" w-full z-20 sticky top-0 text-white bg-darkblue">
+  <header
+    class="w-full z-20 sticky top-0 text-white bg-darkblue transition1sec"
+    :class="{ 'bg-lightblue': isScrolled }"
+  >
     <!-- nav desktop -->
     <nav
-      class="lg:max-h-28 max-h-20 w-full py-4 lg:py-6 grid grid-cols-2 grid-rows-1 lg:grid-cols-2 items-center justify-between lg:border-none "
+      class="lg:max-h-28 max-h-20 w-full py-4 lg:py-6 grid grid-cols-2 grid-rows-1 lg:grid-cols-2 items-center justify-between lg:border-none"
       aria-label="Top"
     >
       <!-- logo -->
@@ -46,7 +49,7 @@
       class="lg:hidden w-full absolute top-0 h-screen z-40 grid grid-cols-2 grid-rows-4 bg-opacity-40 backgroundBlur bg-black"
     >
       <div
-        class="grid grid-cols-2 grid-rows-1 col-span-2 my-4 h-12 justify-items-center w-full "
+        class="grid grid-cols-2 grid-rows-1 col-span-2 my-4 h-12 justify-items-center w-full"
       >
         <!-- logo -->
         <NuxtLink to="/" class="flex justify-center lg:col-span-1 h-full">
@@ -74,7 +77,7 @@
       <div
         v-for="lien in liens"
         :key="lien.texte"
-        class="mb-4 py-4 flex flex-col items-center "
+        class="mb-4 py-4 flex flex-col items-center"
         @click="toggle"
       >
         <NuxtLink
@@ -90,12 +93,15 @@
   </header>
 </template>
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters } from "vuex";
 export default {
   name: "Header",
   methods: {
     toggle() {
       this.isActive = !this.isActive;
+    },
+    handleScroll() {
+      this.isScrolled = window.scrollY > 0;
     },
   },
   computed: {
@@ -104,8 +110,15 @@ export default {
       return this.getImageSite.find((el) => el.name === "Logo");
     },
   },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
   data() {
     return {
+      isScrolled: false,
       isActive: true,
       liens: [
         {
@@ -133,3 +146,14 @@ export default {
   },
 };
 </script>
+<style>
+/* Ajout de la classe bg-lightblue avec la couleur que vous souhaitez pour le défilement */
+.bg-lightblue {
+  background-color: #000025;
+  transition: 1s;
+  /* Remplacez ceci par la couleur que vous souhaitez appliquer en fond d'écran lors du défilement */
+}
+.transition1sec{
+  transition: 1s;
+}
+</style>
