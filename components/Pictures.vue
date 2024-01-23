@@ -3,7 +3,7 @@
     <!-- div 1 -->
     <div
       v-if="pictures"
-      class="flex flex-col justify-center flex-wrap gap-8 xl:gap-28 px-4 pb-4 py-2 md:flex-row md:items-baseline"
+      class="flex flex-col justify-center flex-wrap gap-8 xl:gap-28 px-4 pb-4 py-2 md:flex-row items-baseline"
     >
       <!-- div by picture  -->
       <div
