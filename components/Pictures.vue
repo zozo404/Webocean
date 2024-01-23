@@ -3,18 +3,18 @@
     <!-- div 1 -->
     <div
       v-if="pictures"
-      class="flex flex-col justify-center flex-wrap gap-8 xl:gap-28 px-4 pb-4 py-2 md:flex-row items-baseline"
+      class="flex flex-col justify-center flex-wrap gap-8 px-4 pb-4 py-2 md:flex-row items-baseline"
     >
       <!-- div by picture  -->
       <div
         v-for="(picture, index) in pictures"
         :key="picture.id"
         :class="{ visible: isVisible }"
-        class="fade-scroll"
+        class="fade-scroll w-full text-center"
       >
         <NuxtLink
           :to="picture.slug.current"
-          class="flex sm:items-center gap-2"
+          class="flex sm:items-center gap-4 lg:gap-8 xl:gap-32 2xl:gap-[12rem] w-full justify-center"
           :class="{
             'flex-row': index % 2 === 0,
             'flex-row-reverse': index % 2 !== 0,
@@ -34,7 +34,7 @@
           </div>
           <!-- text new -->
           <div class="hidden sm:flex justify-center">
-            <p class="sm:w-[70%] lg:w-4/5">{{ truncateText(picture.text) }}</p>
+            <p class="sm:w-[20rem] xl:w-[33rem] 3xl:w-[40rem]">{{ truncateText(picture.text) }}</p>
           </div>
         </NuxtLink>
       </div>
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     truncateText(text) {
-      const maxLength = 110;
+      const maxLength = 200;
       if (text.length <= maxLength) {
         return text;
       } else {

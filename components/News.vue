@@ -9,7 +9,7 @@
       <div
         v-for="(news, index) in news"
         :key="news.id"
-        class="fade-scroll text-center flex w-full"
+        class="fade-scroll text-center w-full"
         :class="{ visible: isVisible }"
       >
         <NuxtLink
