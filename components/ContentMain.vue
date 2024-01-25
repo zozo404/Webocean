@@ -10,10 +10,7 @@
       />
     </div>
     <p class="container mx-auto py-4 text-base fade-scroll" :class="{ visible: isVisible }">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro soluta
-      similique id dolores neque assumenda quidem mollitia voluptatem est.
-      Voluptatum maiores, assumenda rerum fugiat sequi recusandae animi et
-      consequuntur quidem !
+      Welcome to Webocean, you can discover the latest news and pictures related to the marine world. But you can also buy specialized kits!
     </p>
   </div>
 </template>

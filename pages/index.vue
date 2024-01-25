@@ -1,7 +1,7 @@
 <template>
   <div>
     <ContentMain />
-    <Titles title="Latest News" />
+    <Titles title="Latest News"/>
     <News :news="LastNews" />
     <Titles title="Our latest kits" />
     <Kits :kits="LastKits" />
@@ -33,14 +33,14 @@ export default {
       return sliceKits.slice(0, 3);
     },
     LastPictures() {
-      // Filtrer les images qui ont une date
+      // Filtre les images qui ont une date
       const LastPictures = this.getImageSite.filter((picture) => picture.date);
 
       // descendind ID
       const slicePictures = LastPictures.sort(
         (a, b) => new Date(b.date) - new Date(a.date)
       );
-      return slicePictures.slice(0, 3);
+      return slicePictures.slice(0, 2);
     },
   },
 };
