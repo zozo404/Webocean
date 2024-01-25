@@ -28,12 +28,16 @@
               provider="sanity"
               class="rounded-2xl w-72 sm:w-[50rem] lg:w-[33rem] max-h-72"
             />
-            <h2 class="first-letter:uppercase">
+            <h2 class="first-letter:uppercase sm:hidden pt-2">
               {{ picture.name }} - {{ formatDate(picture.date) }}
             </h2>
           </div>
           <!-- text new -->
-          <div class="hidden sm:flex justify-center">
+          <div class="hidden sm:flex justify-center flex-col">
+            <h2 class="first-letter:uppercase sm:block">
+              {{ picture.name }} - {{ formatDate(picture.date) }}
+            </h2>
+            <br>
             <p class="sm:w-[20rem] xl:w-[33rem] 3xl:w-[40rem]">{{ truncateText(picture.text) }}</p>
           </div>
         </NuxtLink>

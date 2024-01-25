@@ -28,13 +28,33 @@
               provider="sanity"
               class="rounded-2xl w-72 sm:w-[50rem] lg:w-[33rem] max-h-72"
             />
-            <h2 class="first-letter:uppercase">
-              {{ news.title }} - {{ formatDate(news.date) }}
-            </h2>
+            <div class="flex gap-2 justify-center sm:hidden pt-2">
+              <h2 class="first-letter:uppercase">{{ news.title }} - {{ formatDate(news.date) }}</h2>
+              <!-- if the news is new -->
+              <p
+                v-if="news.new == true"
+                class="text-black font-bold bg-[#68C3D4] px-2 rounded-full"
+              >
+                <span class="animate-pulse">New</span>
+              </p>
+            </div>
           </div>
           <!-- text new -->
-          <div class="hidden sm:flex justify-center">
-            <p class="sm:w-[20rem] xl:w-[33rem] 3xl:w-[40rem]">{{ truncateDescription(news.description) }}</p>
+          <div class="hidden sm:flex flex-col items-center justify-center">
+            <div class="flex gap-2">
+              <h2 class="first-letter:uppercase">{{ news.title }} - {{ formatDate(news.date) }}</h2>
+              <!-- if the news is new -->
+              <p
+                v-if="news.new == true"
+                class="text-black font-bold bg-[#68C3D4] px-2 rounded-full"
+              >
+                <span class="animate-pulse">New</span>
+              </p>
+            </div>
+            <br />
+            <p class="sm:w-[20rem] xl:w-[33rem] 3xl:w-[40rem]">
+              {{ truncateDescription(news.description) }}
+            </p>
           </div>
         </NuxtLink>
       </div>
